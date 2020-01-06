@@ -83,7 +83,7 @@ faq =(()=>{
 								</a>
 							</li>
 						</ul>`)
-					.appendTo('.bundle_paging')		
+					.appendTo('.bundle_paging')
 				}else{
 					$(`<ul class="list_paging">
 							<li class="">

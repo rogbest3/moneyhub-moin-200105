@@ -31,7 +31,8 @@ mypage =(()=>{
 		)
 		.done(()=>{
 			setContentView()
-			page_move()			
+			page_move()		
+			exchange_rate()
 		})
 		.fail(()=>{
 			alert(WHEN_ERR)
@@ -50,6 +51,14 @@ mypage =(()=>{
 		.appendTo('#remit_box')
 		.click(()=>{
 			foreignRemit.onCreate()
+		})
+	}
+	let exchange_rate =()=>{
+		$.getJSON('', d=>{
+			alert(d)
+			$.each(d, (i, j)=>{
+				
+			})
 		})
 	}
 	

@@ -11,15 +11,8 @@ tables_mgmt =(()=>{
 	
 	let onCreate =()=>{
 		init()
-		$.when(
-			$.getScript(faq1_vue_js)	
-		)
-		.done(()=>{
-			setContentView()
-		})
-		.fail(()=>{
-			alert(WHEN_ERR)
-		})
+		setContentView()
+
 	}
 	
 	let setContentView =()=>{
@@ -57,7 +50,7 @@ tables_mgmt =(()=>{
 			})
 			.appendTo('tr')
 			
-			$.each(['웹크롤링', '고객 관리', 'FAQ 관리', 'FAQ 페이지'], (i, j)=>{
+			$.each(['웹크롤링', '고객 관리', 'FAQ 관리', '환율 API', 'FAQ 페이지'], (i, j)=>{
 				$('<div/>')
 				.text(j)		// text(j) - setter
 				.css({
@@ -84,6 +77,9 @@ tables_mgmt =(()=>{
 //							alert('faq_mgmt')
 							faq_mgmt()
 							break
+						case '환율 API' :
+							exchange_rate()
+							break
 						case 'FAQ 페이지' :
 							faq1.onCreate()
 						//	faq_mgmt()
@@ -92,6 +88,26 @@ tables_mgmt =(()=>{
 				})
 			})
 			
+		})
+	}
+	let exchange_rate =()=>{
+		$('#right').empty()
+		$.getJSON('https://api.manana.kr/exchange/rate/KRW/'
+				+'KRW,USD,JPY,EUR,CNY,HKD,SGD,TWD,THB,VND,PHP,AUD,NZD,CAD,GBP.json', d=>{
+			$.each(d, (i, j)=>{
+				$(`<div class="box">
+						<div class="question">
+							<p>날짜 : ${j.date.substr(0, 10)}, 
+							통화명 : ${j.name.substr(0, 3)},
+							환율 : ${j.rate.toFixed(2)}</p>
+							
+				       </div>
+				       <div class="answer">
+							
+						</div>
+					</div>`)
+			    .appendTo('#right')
+			})
 		})
 	}
 	let faq_mgmt =()=>{

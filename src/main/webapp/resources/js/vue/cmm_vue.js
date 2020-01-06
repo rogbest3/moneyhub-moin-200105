@@ -43,6 +43,8 @@ cmm_vue = {
 		'<!-- End Google Tag Manager -->'+
 //		'	<link href="https://www.kakaobank.com/products_static/css/common/pc.css" rel="stylesheet" type="text/css">'+
 		'	<link href="https://www.kakaobank.com/products_static/css/event/list/style.css" rel="stylesheet" type="text/css">'+
+//		'<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>'+
+		'<script src="/web/resources/js/exchart/Chart.min.js"></script>'+
 		'</head>'
 	},
 	footer : ()=>{

@@ -44,7 +44,7 @@
 	<script src="<%=application.getContextPath()%>/resources/js/admin_vue/adminIndex_vue.js"></script>
 		
 	<script src="<%=application.getContextPath()%>/resources/js/admin/tables_mgmt.js"></script>
-	<script src="<%=application.getContextPath()%>/resources/js/admin_vue/faq1_vue.js"></script>		
+<%-- 	<script src="<%=application.getContextPath()%>/resources/js/admin_vue/faq1_vue.js"></script>		 --%>
 		
 	
 	<!-- Bootstrap core JavaScript-->
